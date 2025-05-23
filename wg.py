@@ -14,12 +14,9 @@ from langgraph.graph import StateGraph, END
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
-# === CONFIGURATION for SAP AI Core ===
-os.environ['AICORE_CLIENT_ID'] = "sb-42a29a03-b2f4-47de-9a41-e0936be9aaf5!b256749|aicore!b164"
-os.environ['AICORE_AUTH_URL'] = "https://gen-ai.authentication.us10.hana.ondemand.com/oauth/token"
-os.environ['AICORE_CLIENT_SECRET'] = "b5e6caee-15aa-493a-a6ac-1fef0ab6e9fe$Satg7UGYPLsz5YYeXefHpbwTfEqqCkQEbasMDPGHAgU="
-os.environ['AICORE_RESOURCE_GROUP'] = "default"
-os.environ['AICORE_BASE_URL'] = "https://api.ai.prod.us-east-1.aws.ml.hana.ondemand.com/v2"
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
 
 # Set RapidAPI key from environment or use default
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY", "01bc210b26msh2eb4ca8a4bb4f2bp130b38jsn89030bf3e39a")
